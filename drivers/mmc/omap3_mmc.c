@@ -546,7 +546,7 @@ unsigned long mmc_bread(int dev_num, unsigned long blknr, lbaint_t blkcnt,
 {
 	omap_mmc_read_sect(blknr, (blkcnt * MMCSD_SECTOR_SIZE), &cur_card_data,
 				(unsigned long *) dst);
-	return 1;
+	return blkcnt;
 }
 
 int mmc_legacy_init(int dev)
