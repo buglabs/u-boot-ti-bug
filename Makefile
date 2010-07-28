@@ -221,6 +221,7 @@ LIBS += drivers/power/libpower.a
 LIBS += drivers/spi/libspi.a
 ifeq ($(CPU),mpc83xx)
 LIBS += drivers/qe/qe.a
+LIBS += arch/powerpc/cpu/mpc8xxx/lib8xxx.a
 endif
 ifeq ($(CPU),mpc85xx)
 LIBS += drivers/qe/qe.a
@@ -2178,6 +2179,15 @@ trizepsiv_config	:	unconfig
 	fi;
 	@$(MKCONFIG) -n $@ -a trizepsiv arm pxa trizepsiv
 
+vpac270_nor_config \
+vpac270_onenand_config	: unconfig
+	@mkdir -p $(obj)include
+	@if [ "$(findstring onenand,$@)" ] ; then \
+		echo "#define CONFIG_ONENAND_U_BOOT" \
+			>>$(obj)include/config.h ; \
+	fi;
+	@$(MKCONFIG) -n $@ -a vpac270 arm pxa vpac270
+
 #########################################################################
 ## ARM1136 Systems
 #########################################################################
@@ -2443,7 +2453,6 @@ clean:
 	       $(obj)board/netstar/{eeprom,crcek,crcit,*.srec,*.bin}	  \
 	       $(obj)board/trab/trab_fkt   $(obj)board/voiceblue/eeprom   \
 	       $(obj)board/armltd/{integratorap,integratorcp}/u-boot.lds  \
-	       $(obj)arch/blackfin/lib/u-boot.lds				  \
 	       $(obj)u-boot.lds						  \
 	       $(obj)arch/blackfin/cpu/bootrom-asm-offsets.[chs]
 	@rm -f $(obj)include/bmp_logo.h

@@ -360,6 +360,7 @@ LIST_8260="		\
 LIST_83xx="		\
 	caddy2		\
 	kmeter1		\
+	MPC8308RDB	\
 	MPC8313ERDB_33	\
 	MPC8313ERDB_NAND_66	\
 	MPC8315ERDB	\
@@ -380,6 +381,7 @@ LIST_83xx="		\
 	sbc8349		\
 	SIMPC8313_LP	\
 	TQM834x		\
+	ve8313		\
 	vme8349		\
 "
 
@@ -408,6 +410,7 @@ LIST_85xx="		\
 	MPC8569MDS_NAND \
 	MPC8572DS	\
 	MPC8572DS_36BIT	\
+	P1022DS		\
 	P2020DS		\
 	P2020DS_36BIT	\
 	P1011RDB	\
@@ -704,6 +707,7 @@ LIST_at91="			\
 
 LIST_pxa="		\
 	cerf250		\
+	colibri_pxa270	\
 	cradle		\
 	csb226		\
 	delta		\
@@ -713,10 +717,13 @@ LIST_pxa="		\
 	polaris		\
 	pxa255_idp	\
 	trizepsiv	\
+	vpac270_nor	\
+	vpac270_onenand	\
 	wepep250	\
 	xaeniax		\
 	xm250		\
 	xsengine	\
+	zipitz2		\
 	zylonite	\
 "
 
@@ -826,9 +833,6 @@ LIST_x86="		\
 #########################################################################
 
 LIST_nios2="		\
-	EP1C20		\
-	EP1S10		\
-	EP1S40		\
 	PCI5441		\
 	PK1C20		\
 	nios2-generic	\
@@ -894,6 +898,7 @@ LIST_avr32="		\
 LIST_blackfin="		\
 	bf518f-ezbrd	\
 	bf526-ezbrd	\
+	bf527-ad7160-eval	\
 	bf527-ezkit	\
 	bf527-ezkit-v2	\
 	bf533-ezkit	\
