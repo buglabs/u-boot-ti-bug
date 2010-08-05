@@ -137,14 +137,10 @@
  *  SMSC9115 Ethernet from SMSC9118 family
  *  ----------------------------------------------------------------------------
  */
-#undef CONFIG_CMD_NET
-#ifdef CONFIG_CMD_NET
 #define CONFIG_NET_MULTI
 #define CONFIG_SMC911X
 #define CONFIG_SMC911X_32_BIT
 #define CONFIG_SMC911X_BASE	0x2C000000
-
-#endif  /* (CONFIG_COMMANDS & CONFIG_CMD_NET) */
 
 /*  ----------------------------------------------------------------------------
  *  I2C
@@ -360,7 +356,7 @@
 #define CONFIG_EXTRA_ENV_SETTINGS \
   "console=ttyS2,115200n8\0" \
   "mmcboot=mmc init;ext2load mmc 0:1 0x80000000 /boot/uImage;run mmcargs;bootm 0x80000000\0"\
-  "mmcargs=setenv bootargs console=${console} root=/dev/mmcblk0p1 rw rootwait rootdelay=1 kgdboc=${console} usbcore.autosuspend=-1\0" \
+  "mmcargs=setenv bootargs console=${console} root=/dev/mmcblk0p1 rw rootwait rootdelay=1 kgdboc=${console} usbcore.autosuspend=-1 vram=24M omapfb.vram=0:0M,1:24M,2:0M omapdss.def_disp=dvi omapfb.mode=dvi:1280x1024MR-32@57\0" \
 
 
 
